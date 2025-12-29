@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 * {
-    font-family: "Playfair Display", serif;
+    font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -25,6 +25,16 @@ header {
     height: 80px;
 }
 
+h1, h2, h3, header h2 a {
+    font-family: "Playfair Display", serif;
+}
+
+header h2 a{
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+}
+
 ul {
     list-style: none;
     display: flex;
@@ -35,11 +45,12 @@ ul {
 ul a {
     color: black;
     text-decoration: none;
-    font-weight: bold;
+    transition: 0.1s;
 }
 
 ul a:hover {
-    color: #9a9a9a;
+    padding-bottom: 5px;
+    border-bottom: 1px solid;
 }
 
 .login-acc {
@@ -64,8 +75,132 @@ ul a:hover {
 }
 
 #hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#hero-text h1 {
     text-align: center;
     color: white;
+    font-size: 4rem;
+    font-style: italic;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+#hero-text p {
+    font-size: 1.1rem;    
+    letter-spacing: 2px;  
+    text-transform: uppercase; 
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+#hero-text button {
+    border: none;
+    padding: 18px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #ffffff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+#hero-text button:hover {
+    background-color: #6a6a6a;
+    color: #fff;
+}
+
+#promo-banner {
+    padding-block: 60px;
+    padding-inline: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.promo-container {
+    display: flex;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.promo-container:hover {
+    transform: translateY(-5px); 
+}
+
+.promo-img-box {
+    flex: 1; 
+    height: 350px;
+    position: relative; 
+}
+
+.promo-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #D4AF37;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.promo-text {
+    flex: 1.2; 
+    padding: 40px;
+    text-align: left;
+}
+
+.promo-text h3 {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.promo-text p {
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.promo-text p strong {
+    color: #D4AF37;
+    font-weight: 600;
+}
+
+.btn-promo {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #222; 
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-promo:hover {
+    background-color: #797979;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
 }
 
 #category {
@@ -79,14 +214,160 @@ ul a:hover {
     gap: 4rem;
 }
 
+#category h2 {
+    text-align: center;
+    margin-bottom: 3rem; 
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
 .category-card-img {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card h3 {
+    padding-top: 15px;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+    font-weight: 200;
+}
+
+.category-card:hover .category-card-img {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.category-card:hover h3 {
+    border-bottom-color: #000000;
+
+}
+
+#about {
+    padding-block: 50px; 
+    padding-inline: 5rem; 
+    background-color: #fff; 
+    border-radius: 20px;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 3rem; 
+    font-size: 2.5rem;
+    color: #333;
+}
+
+#about-details {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+#about-txt {
+    flex: 1; 
+}
+
+#about-txt h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #000000;   
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+#about-txt p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+#about-img {
+    flex: 1; 
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px; 
+    box-shadow: 5px 5px 0px #c4c4c4; 
     object-fit: cover;
 }
 
 footer {
+    color: #fff;
     text-align: center;
+    font-size: 0.8rem;
+    color: #fff;
+    margin-top: 50px;
+    padding-block: 30px;
+    background-color: #1a1a1a;
+    letter-spacing: 1px;
 }
 
 
+@media screen and (max-width: 768px) {
+    header {
+        padding-inline: 1.5rem;
+        height: auto;
+        padding-block: 15px;
+        flex-wrap: wrap;
+    }
+    
+    header ul {
+        display: none;
+    }
+    
+    #hero-text h1 {
+        font-size: 2.5rem; 
+    }
+
+    #hero-text p {
+        text-align: center;
+    }
+    
+    #content, #about, #category {
+        padding-inline: 1.5rem;
+    }
+
+    .promo-container {
+        flex-direction: column;
+    }
+    
+    .promo-img-box {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .promo-text {
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    #about-details {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+    
+    #about-txt {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
